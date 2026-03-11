@@ -1,13 +1,21 @@
+import { useState } from "react";
 import './App.css'
+import Button from './components/Button';
 import Card from './components/Card'
 
 function App() {
+  const [count, setCount] =useState(0);
+
+  function handleClick() {
+    setCount(count+1);
+  }
 
   return (
     <div>
-      <Card name='Ashu'>
-      <h1>Hello I'm Ashu</h1>
-      </Card>
+      <Button handleClick={handleClick}
+      text='click me'>
+      <h1>{count}</h1>
+      </Button>
     </div>
   )
 }
