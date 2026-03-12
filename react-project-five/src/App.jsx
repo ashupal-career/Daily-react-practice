@@ -4,19 +4,25 @@ import LogoutBtn from './components/LogoutBtn'
 import LoginBtn from './components/LoginBtn'
 
 function App() {
-  const [isLoggedIn, setLoggedIn] = useState(true)
+  const [isLoggedIn, setLoggedIn] = useState(false)
 
-  if(isLoggedIn)
-  {
-    return (
-      <LogoutBtn/>
+  // if(isLoggedIn)
+  // {
+  //   return (
+  //     <LogoutBtn/>
+  // )
+  // }
+  // else {
+  //   return(
+  //     <LoginBtn/>
+  //   )
+  // }
+
+  return(
+    <div>
+      {isLoggedIn ? <LogoutBtn/> : <LoginBtn/>}
+    </div>
   )
-  }
-  else {
-    return(
-      <LoginBtn/>
-    )
-  }
 }
 
 export default App
