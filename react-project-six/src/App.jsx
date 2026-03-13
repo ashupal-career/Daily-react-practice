@@ -24,6 +24,9 @@ function App() {
         <button type='sumbit'>Submit</button>
       </form>
       {/* <button onClick={handleClick}>Click me</button> */}
+
+      {/* immetdiate invocation*/}
+      <button onClick={() => alert("Button clicked")}>Click me</button>
     </div>
   )
 }
