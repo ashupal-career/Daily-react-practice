@@ -9,13 +9,18 @@ function App() {
   // third -> comma seprated dependence list
 
   // 1 variation: run on every  render 
+  // useEffect(() => {
+  //   alert("I will run on each render")
+  // })
+
+  // 2 variation: That runs on only first render
   useEffect(() => {
-    alert("I will run on each render")
-  })
+    alert("I will run on only 1st render")
+  },[])
 
   function handleClick() {
     setCount(count+1);
-    
+
   }
 
   return (
