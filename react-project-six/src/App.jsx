@@ -5,19 +5,25 @@ function App() {
   const [count, setCount] = useState(0)
 
   function handleClick() {
-    alert("Clicked button");
+    alert("Button Clicked");
   }
 
   function handleInputChange(e) {
     console.log("value till now: ",e.target.value)
   }
+  function handleSubmit(e) {
+    e.preventDefault();
+    // I am writing my customm behaviour down
+    alert("Form Submited...!")
+  }
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleInputChange} />
+        <button type='sumbit'>Submit</button>
       </form>
-      <button onClick={handleClick}>Submit</button>
+      {/* <button onClick={handleClick}>Click me</button> */}
     </div>
   )
 }
