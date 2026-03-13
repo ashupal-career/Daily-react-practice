@@ -14,9 +14,14 @@ function App() {
   // })
 
   // 2 variation: That runs on only first render
-  useEffect(() => {
-    alert("I will run on only 1st render")
-  },[])
+  // useEffect(() => {
+  //   alert("I will run on only 1st render")
+  // },[])
+
+  // 3 variation: That will run every updated
+  useEffect(()=> {
+    alert("I will run every time when count is updated")
+  },[count])
 
   function handleClick() {
     setCount(count+1);
