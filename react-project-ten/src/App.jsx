@@ -5,6 +5,9 @@ import About from './components/About';
 import Dashboard from './components/Dashboard';
 import Navbar from './components/Navbar';
 import ParamComp from './components/paramComp';
+import Courses from './components/Courses';
+import MokeTests from './components/MokeTests';
+import Reports from './components/Reports';
 
 const router = createBrowserRouter([
   {
@@ -26,10 +29,24 @@ const router = createBrowserRouter([
     element: <div>
       <Navbar/>
       <Dashboard />
-    </div>
+    </div>,
+    children:[
+      {
+        path:"courses",
+        element: <Courses/>
+      },
+      {
+        path:"moke-tests",
+        element: <MokeTests/>
+      },
+      {
+        path:"reports",
+        element: <Reports/>
+      }
+    ]
   },
   {
-    path: "/student/:id",
+    path: "student/:id",
     element: <div>
       <Navbar/>
       <ParamComp/>
