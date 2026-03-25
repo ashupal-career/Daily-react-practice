@@ -27,6 +27,7 @@ function App() {
         <input type="text" {...register('lastName')}/>
       </div>
       <br />
+      <input type="submit" />
     </form>
     </>
   )
