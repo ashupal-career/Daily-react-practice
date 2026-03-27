@@ -15,12 +15,14 @@ function App() {
     <form onSubmit={handleSubmit((data) => console.log(data))}>
       <div>
         <label>First Name: </label>
-        <input type="text" {...register('firstName', 
+        <input 
+        className={errors.firstName ? 'input-error' : ''}
+        type="text" {...register('firstName', 
           {required: true, 
           minLength:{value:3, message:'Min length at least 3'},
           maxLength:{value:8, message:'Max length at least 8'}
           })}/>
-          {errors.firstName && <p>{errors.firstName.message}</p>}
+          {errors.firstName && <p className='error-msg'>{errors.firstName.message}</p>}
       </div>
       <br />
       <div>
