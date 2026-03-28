@@ -5,6 +5,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   let val = useRef(0);
+  let btnRef = useRef();
 
   function handleIncrement() {
     val.current = val.current + 1;
@@ -17,9 +18,15 @@ function App() {
     console.log("Render");
   })
 
+  function changeColor() {
+    btnRef.current.style.backgroundColor = 'red';
+  }
+
   return (
     <>
-    <button onClick={handleIncrement}>Increment</button>
+    <button ref={btnRef} onClick={handleIncrement}>Increment</button>
+    <br />
+    <button onClick={changeColor}>Change color of 1st button</button>
     <br />
     <div>
       Count:{count}
