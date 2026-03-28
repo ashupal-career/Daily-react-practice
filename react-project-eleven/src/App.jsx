@@ -1,36 +1,35 @@
-import { useEffect, useState, useRef } from 'react'
+import {useState, useRef } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [time, setTime] = useState(0);
 
-  let val = useRef(0);
-  let btnRef = useRef();
+  let timerRef = useRef(null);
 
-  function handleIncrement() {
-    val.current = val.current + 1;
-    console.log("Value of val" ,val.current);
-    setCount(count+1);
+  function startTimer() {
+    timerRef.current = setInterval(() => {
+      setTime(time => time+1)
+    },1000)
+  }
+  
+  function stopTimer() {
+    clearInterval(timerRef.current)
+    timerRef.current = null;
   }
 
-// It runs on every render
-  useEffect(() => {
-    console.log("Render");
-  })
-
-  function changeColor() {
-    btnRef.current.style.backgroundColor = 'red';
+  function resetTimer() {
+    stopTimer();
+    setTime(0);
   }
+
 
   return (
     <>
-    <button ref={btnRef} onClick={handleIncrement}>Increment</button>
-    <br />
-    <button onClick={changeColor}>Change color of 1st button</button>
-    <br />
-    <div>
-      Count:{count}
-    </div>
+    <h1>StopWatch: {time} seconds</h1>
+    <button onClick={startTimer}>Start</button><br />
+    <button onClick={stopTimer}>Stop</button><br />
+    <button onClick={resetTimer}>Reset</button><br />
+
     </>
   )
 }
