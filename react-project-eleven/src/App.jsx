@@ -1,9 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  let val = useRef(0);
+
   function handleIncrement() {
+    val.current = val.current + 1;
+    console.log("Value of val" ,val.current);
     setCount(count+1);
   }
 
