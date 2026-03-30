@@ -13,7 +13,9 @@ function App() {
     Count: {count}
     <button onClick={handleClick}>Increment</button><br />
     <div>
-      <ChildComponent buttonName='Click me'/>
+      <ChildComponent 
+      buttonName='Click me'
+      handleClick={handleClick}/>
     </div>
     </>
   )
