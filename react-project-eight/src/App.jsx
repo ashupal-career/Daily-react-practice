@@ -18,7 +18,7 @@ function App() {
     <>
       <UserContext.Provider value={user}>
         <ThemeContext.Provider value={{theme,setTheme}}>
-          <div id='container' style={{backgroundColor : theme === 'light' ? "beige" : "black"}}>
+          <div id='container' style={{backgroundColor : theme === 'light' ? "beige" : "skyblue"}}>
           <ChildA/>
           </div>
         </ThemeContext.Provider>
