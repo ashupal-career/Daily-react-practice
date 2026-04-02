@@ -6,9 +6,13 @@ import Card from './components/Card'
 function App() {
   const [count, setCount] =useState(0);
 
+  // function handleClick() {
+  //   setCount(count+1);
+  // }
+
   function handleClick() {
-    setCount(count+1);
-  }
+  setCount((prev) => (prev < 20 ? prev + 1 : prev));
+}
 
   return (
     <div>
